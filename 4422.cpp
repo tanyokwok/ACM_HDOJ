@@ -18,8 +18,6 @@ int max(int a, int b) {
 }
 
 int main() {
-	//freopen("input.dat", "r", stdin);
-
 	while (~scanf("%d", &n)) {
 		for (int i = 0; i < n; ++i) {
 			scanf("%d", &w[i]);
