@@ -17,12 +17,10 @@
 using namespace std;
 
 int n;
-
 struct coordinate{
 	int x;
 	int y;
 } point[2 * N + 10];
-
 double ans;
 double dis[2 * N + 10][2 * N + 10];
 // tarjan
