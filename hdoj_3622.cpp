@@ -111,7 +111,7 @@ double binary_search(double min, double max, double precision) {
 }
 
 int main() {
-	freopen("input.dat", "r", stdin);
+	//freopen("input.dat", "r", stdin);
 
 	while (~scanf("%d", &n)) {
 		for (int i = 0; i < n; ++i) {
