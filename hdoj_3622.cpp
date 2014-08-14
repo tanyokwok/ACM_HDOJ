@@ -64,7 +64,7 @@ void tarjan(int i) {
 			if (low[j] < low[i]) low[i] = low[j];
 		}
 		else if (instack[j] && dfn[j] < low[i]) {
-			low[i] = low[j];
+			low[i] = dfn[j];
 		}
 	}
 	if (dfn[i] == low[i]) {
