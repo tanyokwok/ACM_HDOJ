@@ -49,7 +49,8 @@ void make_adj(int bit) {
 					adj[2 * j + 1].push_back(2 * j);
 				}
 			}
-			if (((i & 1) == 0) && ((j & 1) == 0)) {
+			// <WA> else if -> if </ WA>
+			else if (((i & 1) == 0) && ((j & 1) == 0)) {
 				if (num) {
 					adj[2 * i].push_back(2 * i + 1);
 					adj[2 * j].push_back(2 * j + 1);
@@ -91,12 +92,12 @@ void tarjan(int i) {
 		}
 	}
 	if (dfn[i] == low[i]) {
-		++bcnt;
 		do {
 			j = stap[stop--];
 			instack[j] = false;
-			belong[j] = bcnt - 1;
+			belong[j] = bcnt;
 		} while (j != i);
+		++bcnt;
 	}
 }
 
@@ -111,7 +112,9 @@ void tarjan_solve() {
 
 bool tarjan_solvable() {
 	for (int i = 0; i < n; ++i) {
-		if (belong[2 * i] == belong[2 * i + 1]) return false;
+		if (belong[2 * i] == belong[2 * i + 1]) {
+			return false;
+		}
 	}
 	return true;
 }
@@ -134,11 +137,10 @@ int main() {
 				if (matrix[i][j] != matrix[j][i]) ans = false;
 			}
 		}
-		// <WA>
+		// <WA> none </ WA>
 		for (int i = 0; i < n; ++i) {
 			if (matrix[i][i]) ans = false;
 		}
-		// </ WA>
 		if (!ans) {
 			printf("NO\n");
 			continue;
