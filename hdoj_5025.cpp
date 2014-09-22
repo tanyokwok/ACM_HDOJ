@@ -179,7 +179,7 @@ int bfs_f() {
 }
 	
 int main() {
-	freopen("input.txt", "r", stdin);
+	//freopen("input.txt", "r", stdin);
 
 	while ((~scanf("%d %d", &n, &m)) && (0 != n)) {
 		get_input();
