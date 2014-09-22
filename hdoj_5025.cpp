@@ -24,6 +24,7 @@ using std::queue;
  *
  * bfs 数组存放的是以某种状态到达某个位置后所用的最少步数。
  * memset()不会超时吗？如何判断？
+ *
  **/
 
 typedef struct {
